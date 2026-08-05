@@ -1,0 +1,57 @@
+<main class="test-page">
+<section class="users-page">
+  <h1>Usuários</h1>
+  <p>Controle de usuários, perfis e permissões do Nox Bank.</p>
+
+  <div class="nox-panel placeholder">
+    A estrutura inicial do frontend está funcionando.
+  </div>
+  <div>
+
+  <h1>Componentes Nox Bank</h1>
+
+  <section class="nox-panel component-preview">
+    <h2>Botões</h2>
+
+    <div class="button-row">
+      <app-button
+        label="Novo usuário"
+        variant="primary"
+        (clicked)="testButton()"
+      />
+
+      <app-button
+        label="Gerenciar perfis"
+        variant="secondary"
+        (clicked)="testButton()"
+      />
+
+      <app-button
+        label="Excluir"
+        variant="danger"
+        (clicked)="testButton()"
+      />
+
+      <app-button
+        label="Cancelar"
+        variant="ghost"
+        (clicked)="testButton()"
+      />
+
+      <app-button
+        label="Salvar"
+        variant="primary"
+        [loading]="isSaving"
+        (clicked)="simulateSave()"
+      />
+
+      <app-button
+        label="Desabilitado"
+        variant="secondary"
+        [disabled]="true"
+      />
+    </div>
+  </section>
+  </div>
+</section>
+</main>

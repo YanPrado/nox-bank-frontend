@@ -1,0 +1,144 @@
+:host {
+  display: inline-block;
+}
+
+.nox-button {
+  min-height: 42px;
+  padding: 10px 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  border: 1px solid transparent;
+  border-radius: var(--nox-radius-md);
+
+  color: var(--nox-text-primary);
+  background: transparent;
+
+  cursor: pointer;
+
+  transition:
+    transform var(--nox-transition-fast),
+    border-color var(--nox-transition-fast),
+    background var(--nox-transition-fast),
+    box-shadow var(--nox-transition-fast);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    border-color: var(--nox-border-hover);
+
+    box-shadow:
+      0 0 0 3px rgba(114, 88, 220, 0.1),
+      0 8px 24px rgba(92, 73, 180, 0.1);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.52;
+    cursor: not-allowed;
+  }
+}
+
+.nox-button--primary {
+  color: #090813;
+
+  border-color: rgba(167, 149, 255, 0.58);
+
+  background: linear-gradient(
+    135deg,
+    var(--nox-primary-light),
+    var(--nox-primary-dark) 58%,
+    var(--nox-primary)
+  );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 24px rgba(92, 73, 180, 0.12);
+
+  &:hover:not(:disabled) {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      0 10px 28px rgba(92, 73, 180, 0.18);
+  }
+}
+
+.nox-button--secondary {
+  color: var(--nox-primary-light);
+
+  border-color: var(--nox-border);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.012)
+  );
+
+  &:hover:not(:disabled) {
+    border-color: var(--nox-border-hover);
+    background: rgba(143, 124, 255, 0.07);
+  }
+}
+
+.nox-button--danger {
+  color: var(--nox-danger);
+
+  border-color: rgba(210, 108, 146, 0.24);
+
+  background: rgba(210, 108, 146, 0.065);
+
+  &:hover:not(:disabled) {
+    border-color: rgba(210, 108, 146, 0.48);
+    background: rgba(210, 108, 146, 0.1);
+  }
+}
+
+.nox-button--ghost {
+  color: var(--nox-text-secondary);
+
+  border-color: transparent;
+  background: transparent;
+
+  &:hover:not(:disabled) {
+    color: var(--nox-primary-light);
+    background: rgba(143, 124, 255, 0.055);
+  }
+}
+
+.nox-button--full-width {
+  width: 100%;
+}
+
+.nox-button--loading {
+  cursor: wait;
+}
+
+.nox-button__spinner {
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+
+  animation: nox-button-spin 700ms linear infinite;
+}
+
+.nox-button__label {
+  white-space: nowrap;
+}
+
+@keyframes nox-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

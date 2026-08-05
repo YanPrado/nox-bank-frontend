@@ -1,0 +1,23 @@
+<button
+  class="nox-button nox-reflection"
+  [class.nox-button--primary]="variant === 'primary'"
+  [class.nox-button--secondary]="variant === 'secondary'"
+  [class.nox-button--danger]="variant === 'danger'"
+  [class.nox-button--ghost]="variant === 'ghost'"
+  [class.nox-button--full-width]="fullWidth"
+  [class.nox-button--loading]="loading"
+  [type]="type"
+  [disabled]="disabled || loading"
+  (click)="onClick($event)"
+>
+  @if (loading) {
+    <span
+      class="nox-button__spinner"
+      aria-hidden="true"
+    ></span>
+  }
+
+  <span class="nox-button__label">
+    {{ loading ? 'Carregando...' : label }}
+  </span>
+</button>

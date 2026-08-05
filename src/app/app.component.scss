@@ -1,0 +1,23 @@
+.test-page {
+  min-height: 100vh;
+  padding: 40px;
+}
+
+h1 {
+  margin: 0 0 24px;
+}
+
+.component-preview {
+  max-width: 900px;
+  padding: 28px;
+}
+
+.component-preview h2 {
+  margin: 0 0 20px;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}

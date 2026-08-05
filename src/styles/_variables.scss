@@ -1,0 +1,44 @@
+:root {
+  // Fundo galáxia
+  --nox-background: #030611;
+  --nox-background-secondary: #071024;
+  --nox-background-tertiary: #090d1c;
+
+  // Superfícies
+  --nox-surface: rgba(14, 19, 40, 0.9);
+  --nox-surface-strong: rgba(7, 11, 27, 0.96);
+  --nox-surface-hover: rgba(143, 124, 255, 0.055);
+
+  // Roxos
+  --nox-primary: #8f7cff;
+  --nox-primary-light: #c7bcff;
+  --nox-primary-dark: #6754d8;
+  --nox-magenta: #a044b0;
+
+  // Textos
+  --nox-text-primary: #f5f3ff;
+  --nox-text-secondary: #9aa0bd;
+  --nox-text-disabled: #646b87;
+
+  // Estados
+  --nox-success: #86c8b7;
+  --nox-danger: #d48ea6;
+  --nox-warning: #d6b678;
+
+  // Bordas
+  --nox-border: rgba(139, 116, 255, 0.18);
+  --nox-border-hover: rgba(167, 149, 255, 0.48);
+
+  // Medidas
+  --nox-header-height: 76px;
+  --nox-sidebar-width: 240px;
+
+  // Bordas arredondadas
+  --nox-radius-small: 8px;
+  --nox-radius-medium: 12px;
+  --nox-radius-large: 18px;
+
+  // Transições
+  --nox-transition-fast: 160ms ease;
+  --nox-transition-normal: 240ms ease;
+}
