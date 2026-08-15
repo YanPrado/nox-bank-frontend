@@ -12,7 +12,7 @@
   gap: 9px;
 
   border: 1px solid transparent;
-  border-radius: var(--nox-radius-md);
+  border-radius: var(--nox-radius-small);
 
   color: var(--nox-text-primary);
   background: transparent;
@@ -128,7 +128,7 @@
 
   border: 2px solid currentColor;
   border-right-color: transparent;
-  border-radius: 50%;
+  border-radius: var(--nox-radius-small);
 
   animation: nox-button-spin 700ms linear infinite;
 }

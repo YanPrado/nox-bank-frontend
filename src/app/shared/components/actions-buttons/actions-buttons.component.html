@@ -1,0 +1,39 @@
+<div class="actions">
+
+  @if (showView) {
+    <button
+      type="button"
+      class="action-button"
+      aria-label="Visualizar"
+      title="Visualizar"
+      (click)="onView()"
+    >
+      ◉
+    </button>
+  }
+
+  @if (showEdit) {
+    <button
+      type="button"
+      class="action-button"
+      aria-label="Editar"
+      title="Editar"
+      (click)="onEdit()"
+    >
+      ✎
+    </button>
+  }
+
+  @if (showDelete) {
+    <button
+      type="button"
+      class="action-button action-button--danger"
+      aria-label="Excluir"
+      title="Excluir"
+      (click)="onDelete()"
+    >
+      ⌫
+    </button>
+  }
+
+</div>

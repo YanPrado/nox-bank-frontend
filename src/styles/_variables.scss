@@ -28,17 +28,30 @@
   // Bordas
   --nox-border: rgba(139, 116, 255, 0.18);
   --nox-border-hover: rgba(167, 149, 255, 0.48);
+  
 
   // Medidas
   --nox-header-height: 76px;
   --nox-sidebar-width: 240px;
 
   // Bordas arredondadas
-  --nox-radius-small: 8px;
+  --nox-radius-small: 5px;
   --nox-radius-medium: 12px;
   --nox-radius-large: 18px;
 
   // Transições
   --nox-transition-fast: 160ms ease;
   --nox-transition-normal: 240ms ease;
+
+  // Fontes
+  --nox-font-default: "JetBrains Mono", monospace;
+  --nox-font-gamer: "Bitcount Prop Single", system-ui;
+
+  // Pesos
+  --nox-font-regular: 400;
+  --nox-font-medium: 500;
+  --nox-font-semibold: 600;
+  --nox-font-bold: 700;
+
+  // restante das variáveis...
 }

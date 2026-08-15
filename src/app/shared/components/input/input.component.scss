@@ -1,0 +1,91 @@
+:host {
+  display: block;
+}
+
+.nox-field {
+  display: grid;
+  gap: 8px;
+}
+
+.nox-field__label {
+  color: var(--nox-text-primary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nox-field__required {
+  color: var(--nox-danger);
+}
+
+.nox-field__control {
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid var(--nox-border);
+  border-radius: var(--nox-radius-md);
+
+  background: rgba(3, 6, 17, 0.42);
+
+  transition:
+    border-color var(--nox-transition-fast),
+    background var(--nox-transition-fast),
+    box-shadow var(--nox-transition-fast);
+}
+
+.nox-field__control:focus-within {
+  border-color: var(--nox-border-hover);
+
+  background: rgba(12, 17, 39, 0.72);
+
+  box-shadow:
+    0 0 0 3px rgba(114, 88, 220, 0.08),
+    0 8px 24px rgba(92, 73, 180, 0.08);
+}
+
+.nox-field__input {
+  width: 100%;
+  min-width: 0;
+
+  padding: 11px 13px;
+
+  border: 0;
+  outline: 0;
+
+  color: var(--nox-text-primary);
+  background: transparent;
+}
+
+.nox-field__input::placeholder {
+  color: var(--nox-text-disabled);
+}
+
+.nox-field__message {
+  color: var(--nox-text-secondary);
+  font-size: 12px;
+}
+
+.nox-field__message--error {
+  color: var(--nox-danger);
+}
+
+.nox-field--error {
+  .nox-field__control {
+    border-color: rgba(210, 108, 146, 0.5);
+
+    box-shadow: 0 0 0 3px rgba(210, 108, 146, 0.06);
+  }
+}
+
+.nox-field--disabled {
+  opacity: 0.55;
+
+  .nox-field__control {
+    cursor: not-allowed;
+  }
+
+  .nox-field__input {
+    cursor: not-allowed;
+  }
+}

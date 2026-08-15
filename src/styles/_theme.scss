@@ -39,4 +39,14 @@
   &:active::after {
     left: 125%;
   }
+
+.nox-font-default {
+  font-family: var(--nox-font-default);
+}
+
+.nox-font-gamer {
+  font-family: var(--nox-font-gamer);
+  font-weight: var(--nox-font-semibold);
+  letter-spacing: 0.04em;
+}
 }

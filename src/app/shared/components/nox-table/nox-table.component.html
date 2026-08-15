@@ -1,0 +1,98 @@
+<div class="table-container">
+
+  <div class="table-wrap">
+
+    <table class="nox-table">
+
+      <thead>
+        <tr>
+
+          @for (column of columns; track column.key) {
+            <th
+              [class.align-center]="column.align === 'center'"
+              [class.align-right]="column.align === 'right'"
+            >
+              {{ column.label }}
+            </th>
+          }
+
+          @if (showActions) {
+            <th class="actions-header">
+              Ações
+            </th>
+          }
+
+        </tr>
+      </thead>
+
+      <tbody>
+
+        @for (row of data; track $index) {
+
+          <tr (click)="onRowClick(row)">
+
+            @for (column of columns; track column.key) {
+
+              <td
+                [class.align-center]="column.align === 'center'"
+                [class.align-right]="column.align === 'right'"
+              >
+
+                @if (column.type === 'badge') {
+
+                  <app-badge
+                    [label]="getDisplayValue(row, column)"
+                    [variant]="getBadgeVariant(row, column)"
+                  />
+
+                } @else {
+
+                  {{ getDisplayValue(row, column) }}
+
+                }
+
+              </td>
+            }
+
+            @if (showActions) {
+
+              <td class="actions-cell">
+
+                <div
+                  class="actions-wrapper"
+                  (click)="$event.stopPropagation()"
+                >
+                  <app-action-buttons
+                    [showView]="showView"
+                    [showEdit]="showEdit"
+                    [showDelete]="showDelete"
+
+                    (view)="onView(row)"
+                    (edit)="onEdit(row)"
+                    (delete)="onDelete(row)"
+                  />
+                </div>
+
+              </td>
+
+            }
+
+          </tr>
+
+        }
+
+      </tbody>
+
+    </table>
+
+    @if (data.length === 0) {
+
+      <div class="empty-state">
+        {{ emptyMessage }}
+      </div>
+
+    }
+
+  </div>
+
+</div>

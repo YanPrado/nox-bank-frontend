@@ -1,0 +1,45 @@
+<header class="header">
+
+  <button
+    class="brand"
+    type="button"
+    aria-label="Abrir menu"
+    (click)="onMenuToggle()"
+  >
+
+    <span class="brand-mark"></span>
+
+    <span class="brand-copy">
+      <strong>
+        {{ appName }}
+      </strong>
+
+      <small>
+        {{ appDescription }}
+      </small>
+    </span>
+
+  </button>
+
+
+  <div class="account">
+
+    <div class="account-avatar">
+      {{ userInitials }}
+    </div>
+
+    <div class="account-info">
+
+      <strong>
+        {{ userName }}
+      </strong>
+
+      <small>
+        {{ userProfile }}
+      </small>
+
+    </div>
+
+  </div>
+
+</header>

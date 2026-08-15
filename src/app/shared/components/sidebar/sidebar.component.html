@@ -1,0 +1,32 @@
+@if (open) {
+
+  <div
+    class="sidebar-overlay"
+    (click)="onClose()"
+  ></div>
+
+}
+
+<aside
+  class="sidebar"
+  [class.sidebar--open]="open"
+>
+
+  <nav class="sidebar-nav">
+
+    @for (item of items; track item.id) {
+
+      <button
+        type="button"
+        class="sidebar-item"
+        [class.sidebar-item--active]="activeItem === item.id"
+        (click)="onSelect(item)"
+      >
+        {{ item.label }}
+      </button>
+
+    }
+
+  </nav>
+
+</aside>

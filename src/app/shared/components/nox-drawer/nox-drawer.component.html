@@ -1,0 +1,48 @@
+@if (open) {
+
+  <aside
+    class="drawer"
+    role="dialog"
+    aria-modal="false"
+    [attr.aria-label]="kicker || title || 'Painel lateral'"
+  >
+
+    <button
+      type="button"
+      class="drawer-close"
+      aria-label="Fechar painel"
+      title="Fechar"
+      (click)="onClose()"
+    >
+      ×
+    </button>
+
+    <header class="drawer-header">
+
+      @if (kicker) {
+        <span class="drawer-kicker">
+          {{ kicker }}
+        </span>
+      }
+
+      @if (title) {
+        <h2>
+          {{ title }}
+        </h2>
+      }
+
+      @if (subtitle) {
+        <p>
+          {{ subtitle }}
+        </p>
+      }
+
+    </header>
+
+    <div class="drawer-content">
+      <ng-content />
+    </div>
+
+  </aside>
+
+}

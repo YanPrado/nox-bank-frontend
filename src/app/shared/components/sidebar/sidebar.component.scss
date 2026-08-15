@@ -1,0 +1,133 @@
+:host {
+  display: contents;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+  position: fixed;
+
+  top: var(--nox-header-height);
+  bottom: 0;
+  left: 0;
+
+  z-index: 30;
+
+  width: var(--nox-sidebar-width);
+
+  padding: 18px 13px;
+
+  border-right: 1px solid var(--nox-border);
+
+  background: rgba(6, 9, 23, 0.985);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transform: translateX(-102%);
+
+  transition:
+    transform var(--nox-transition-normal);
+}
+
+.sidebar--open {
+  transform: translateX(0);
+}
+
+/* =========================================
+   NAVEGAÇÃO
+========================================= */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  gap: 6px;
+}
+
+/* =========================================
+   ITEM
+========================================= */
+
+.sidebar-item {
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid transparent;
+  border-radius: var(--nox-radius-medium);
+
+  background: transparent;
+
+  color: var(--nox-text-secondary);
+
+  font-family: var(--nox-font-default);
+
+  font-size: 13px;
+  font-weight: var(--nox-font-medium);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    color var(--nox-transition-fast),
+    background var(--nox-transition-fast),
+    border-color var(--nox-transition-fast);
+}
+
+.sidebar-item:hover {
+  color: var(--nox-primary-light);
+
+  background: var(--nox-surface-hover);
+}
+
+/* =========================================
+   ITEM ATIVO
+========================================= */
+
+.sidebar-item--active {
+  color: var(--nox-primary-light);
+
+  border-color: var(--nox-border);
+
+  background: var(--nox-surface-hover);
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.sidebar-overlay {
+  position: fixed;
+
+  top: var(--nox-header-height);
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 29;
+
+  background: rgba(0, 0, 0, 0.28);
+
+  backdrop-filter: blur(1px);
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 760px) {
+
+  .sidebar {
+    width: min(
+      var(--nox-sidebar-width),
+      80vw
+    );
+  }
+
+}

@@ -1,0 +1,76 @@
+:host {
+  display: inline-flex;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.action-button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  color: var(--nox-primary-light);
+
+  font-family: var(--nox-font-default);
+  font-size: 15px;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  transition:
+    transform var(--nox-transition-fast),
+    border-color var(--nox-transition-fast),
+    background-color var(--nox-transition-fast),
+    box-shadow var(--nox-transition-fast);
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
+
+  border-color: var(--nox-border-hover);
+
+  background: var(--nox-surface-hover);
+
+  box-shadow:
+    0 0 0 1px rgba(143, 124, 255, 0.08),
+    0 8px 24px rgba(92, 73, 180, 0.1);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+.action-button--danger {
+  color: var(--nox-danger);
+}
+
+.action-button--danger:hover {
+  border-color: rgba(212, 142, 166, 0.35);
+  background: rgba(212, 142, 166, 0.07);
+}
+
+.action-button:focus-visible {
+  outline: none;
+
+  border-color: var(--nox-border-hover);
+
+  box-shadow:
+    0 0 0 3px rgba(143, 124, 255, 0.12);
+}

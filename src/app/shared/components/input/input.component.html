@@ -1,1 +1,37 @@
-<p>input works!</p>
+<div
+  class="nox-field"
+  [class.nox-field--error]="error"
+  [class.nox-field--disabled]="disabled"
+>
+  <label class="nox-field__label">
+    {{ label }}
+
+    @if (required) {
+      <span class="nox-field__required">*</span>
+    }
+  </label>
+
+  <div class="nox-field__control">
+    <input
+      class="nox-field__input"
+      [type]="type"
+      [value]="value"
+      [placeholder]="placeholder"
+      [disabled]="disabled"
+      [required]="required"
+      [attr.autocomplete]="autocomplete"
+      (input)="handleInput($event)"
+      (blur)="handleBlur()"
+    />
+  </div>
+
+  @if (error) {
+    <small class="nox-field__message nox-field__message--error">
+      {{ error }}
+    </small>
+  } @else if (helperText) {
+    <small class="nox-field__message">
+      {{ helperText }}
+    </small>
+  }
+</div>

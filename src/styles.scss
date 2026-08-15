@@ -2,3 +2,14 @@
 @use "./styles/reset";
 @use "./styles/theme";
 @use "./styles/animations";
+
+
+body {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.nox-font-gamer {
+  font-family: "Bitcount Prop Single", system-ui;
+  font-weight: var(--nox-font-semibold);
+  letter-spacing: 0.04em;
+}

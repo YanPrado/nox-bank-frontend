@@ -1,0 +1,59 @@
+:host {
+  display: inline-flex;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  padding: 5px 9px;
+
+  border: 1px solid var(--nox-border);
+  border-radius: 999px;
+
+  background: rgba(143, 124, 255, 0.055);
+  color: var(--nox-primary-light);
+
+  font-size: 12px;
+  font-weight: var(--nox-font-medium);
+  line-height: 1;
+
+  white-space: nowrap;
+
+  transition:
+    border-color var(--nox-transition-fast),
+    background-color var(--nox-transition-fast),
+    color var(--nox-transition-fast);
+}
+
+.badge--profile {
+  color: var(--nox-primary-light);
+  border-color: var(--nox-border);
+  background: var(--nox-surface-hover);
+}
+
+.badge--success {
+  color: var(--nox-success);
+  border-color: rgba(134, 200, 183, 0.26);
+  background: rgba(134, 200, 183, 0.075);
+}
+
+.badge--danger {
+  color: var(--nox-danger);
+  border-color: rgba(212, 142, 166, 0.23);
+  background: rgba(212, 142, 166, 0.065);
+}
+
+.badge--warning {
+  color: var(--nox-warning);
+  border-color: rgba(214, 182, 120, 0.25);
+  background: rgba(214, 182, 120, 0.07);
+}
+
+.badge--info {
+  color: var(--nox-primary-light);
+  border-color: var(--nox-border-hover);
+  background: var(--nox-surface-hover);
+}

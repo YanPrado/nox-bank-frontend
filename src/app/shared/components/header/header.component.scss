@@ -1,0 +1,229 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: var(--nox-header-height);
+
+  padding: 0 28px;
+
+  border-bottom: 1px solid var(--nox-border);
+
+  background: rgba(4, 7, 20, 0.9);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 8px 10px;
+
+  border: 0;
+  border-radius: var(--nox-radius-medium);
+
+  background: transparent;
+
+  color: var(--nox-text-primary);
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    background var(--nox-transition-fast),
+    transform var(--nox-transition-fast);
+}
+
+.brand:hover {
+  background: var(--nox-surface-hover);
+}
+
+.brand:active {
+  transform: translateY(1px);
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.brand-mark {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--nox-primary);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(23, 22, 42, 0.95),
+      rgba(8, 11, 24, 0.95)
+    );
+
+  transform: rotate(45deg);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.brand-mark::before,
+.brand-mark::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 7px;
+
+  border: 1px solid var(--nox-primary-light);
+}
+
+.brand-mark::after {
+  inset: 13px;
+
+  border-color: var(--nox-primary);
+}
+
+/* =========================================
+   BRAND TEXT
+========================================= */
+
+.brand-copy {
+  text-align: left;
+}
+
+.brand-copy strong {
+  display: block;
+
+  color: var(--nox-text-primary);
+
+  font-family: var(--nox-font-gamer);
+
+  font-size: 20px;
+  font-weight: var(--nox-font-semibold);
+
+  line-height: 1.2;
+}
+
+.brand-copy small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--nox-text-secondary);
+
+  font-family: var(--nox-font-default);
+
+  font-size: 11px;
+}
+
+/* =========================================
+   ACCOUNT
+========================================= */
+
+.account {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.account-avatar {
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--nox-border);
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(19, 25, 47, 0.95),
+      rgba(8, 12, 27, 0.95)
+    );
+
+  color: var(--nox-primary-light);
+
+  font-family: var(--nox-font-default);
+
+  font-size: 12px;
+  font-weight: var(--nox-font-semibold);
+}
+
+/* =========================================
+   ACCOUNT INFO
+========================================= */
+
+.account-info strong {
+  display: block;
+
+  color: var(--nox-text-primary);
+
+  font-family: var(--nox-font-default);
+
+  font-size: 13px;
+  font-weight: var(--nox-font-semibold);
+}
+
+.account-info small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--nox-text-secondary);
+
+  font-family: var(--nox-font-default);
+
+  font-size: 11px;
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 760px) {
+
+  .header {
+    padding: 0 18px;
+  }
+
+  .account-info {
+    display: none;
+  }
+
+  .brand-copy small {
+    display: none;
+  }
+}
