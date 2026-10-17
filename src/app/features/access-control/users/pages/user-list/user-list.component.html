@@ -1,57 +1,158 @@
-<main class="test-page">
-<section class="users-page">
-  <h1>Usuários</h1>
-  <p>Controle de usuários, perfis e permissões do Nox Bank.</p>
+<main class="users-page">
 
-  <div class="nox-panel placeholder">
-    A estrutura inicial do frontend está funcionando.
-  </div>
-  <div>
+  <app-header
+    appName="Nox Bank"
+    appDescription="Controle de acesso"
+    [userName]="userName"
+    [userProfile]="userProfile"
+    (menuToggle)="toggleSidebar()"
+  />
 
-  <h1>Componentes Nox Bank</h1>
+  <app-sidebar
+    [open]="sidebarOpen"
+    [items]="sidebarItems"
+    [activeItem]="activeSidebarItem"
+    (close)="closeSidebar()"
+    (itemSelected)="onSidebarItemSelected($event)"
+  />
+
+  <h1 class="nox-font-gamer">
+    NOX BANK
+  </h1>
+
+  <p class="nox-font-default">
+    Controle de usuários, perfis e permissões
+  </p>
+
+
+  <!-- TESTE INPUT -->
 
   <section class="nox-panel component-preview">
+
+    <h2>Input</h2>
+
+    <div class="input-preview">
+
+      <app-input
+        label="Pesquisar usuário"
+        type="search"
+        placeholder="Digite nome, CPF ou e-mail"
+        helperText="A pesquisa aceitará nome, CPF ou ID."
+        [formControl]="searchControl"
+      ></app-input>
+
+      <app-button
+        label="Mostrar valor"
+        variant="secondary"
+        (clicked)="showSearchValue()"
+      ></app-button>
+
+    </div>
+
+  </section>
+
+
+  <!-- TABELA + DRAWER -->
+
+  <div
+    class="workspace"
+    [class.workspace--drawer-open]="drawerOpen"
+  >
+
+    <app-nox-table
+      [columns]="columns"
+      [data]="users"
+      (view)="viewUser($event)"
+      (edit)="editUser($event)"
+      (delete)="deleteUser($event)"
+    />
+
+    <app-nox-drawer
+      [open]="drawerOpen"
+      kicker="Detalhes do usuário"
+      [title]="selectedUser?.name ?? ''"
+      [subtitle]="selectedUser?.email ?? ''"
+      (close)="closeDrawer()"
+    >
+
+      @if (selectedUser) {
+
+        <div class="info-row">
+          <span>CPF</span>
+          <strong>{{ selectedUser.cpf }}</strong>
+        </div>
+
+        <div class="info-row">
+
+          <span>Perfil</span>
+
+          <app-badge
+            [label]="selectedUser.profile"
+            variant="profile"
+          />
+
+        </div>
+
+        <div class="info-row">
+
+          <span>Status</span>
+
+          <app-badge
+            [label]="selectedUser.active ? 'Ativo' : 'Inativo'"
+            [variant]="selectedUser.active ? 'success' : 'danger'"
+          />
+
+        </div>
+
+      }
+
+    </app-nox-drawer>
+
+  </div>
+
+
+  <!-- TESTE BOTÕES -->
+
+  <section class="nox-panel component-preview">
+
     <h2>Botões</h2>
 
     <div class="button-row">
+
       <app-button
         label="Novo usuário"
         variant="primary"
         (clicked)="testButton()"
-      />
+      ></app-button>
 
       <app-button
         label="Gerenciar perfis"
         variant="secondary"
         (clicked)="testButton()"
-      />
+      ></app-button>
 
       <app-button
         label="Excluir"
         variant="danger"
         (clicked)="testButton()"
-      />
+      ></app-button>
 
       <app-button
         label="Cancelar"
         variant="ghost"
         (clicked)="testButton()"
-      />
+      ></app-button>
 
-      <app-button
-        label="Salvar"
-        variant="primary"
-        [loading]="isSaving"
-        (clicked)="simulateSave()"
-      />
-
-      <app-button
-        label="Desabilitado"
-        variant="secondary"
-        [disabled]="true"
-      />
     </div>
+
   </section>
-  </div>
-</section>
+
+
+  <!-- TESTE BADGE -->
+
+  <app-badge
+    label="Pendente"
+    variant="warning"
+  />
+
 </main>
